@@ -84,7 +84,7 @@ export default class App extends React.Component {
             <MapView.Callout>
               <View>
                 <Text>
-                  {'Name:'} {'\n'} {'Gender:'} {'\n'} {'Age:'}
+                  {'Name:'} {'Stanford Ghost\n'} {'Gender: Ghost\n'} {'Age: 195'}
                 </Text>
               </View>
             </MapView.Callout>
