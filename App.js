@@ -78,7 +78,9 @@ export default class App extends React.Component {
               this.marker = ref;
             }}
             coordinate={coord2}
-            pinColor="#000000">
+            pinColor="#000000"
+            onPress={() => this.marker.showCallout()}
+            >
             <MapView.Callout>
               <View>
                 <Text>
