@@ -106,6 +106,13 @@ export default class App extends React.Component {
                 <Text>
                   {'Name:'} {'Stanford Ghost\n'} {'Gender: Ghost\n'} {'Age: 195'}
                 </Text>
+
+                <Button
+                  //onPress = {}
+                  title="Walk with me!"
+                  color="blue"
+                />
+
               </View>
             </MapView.Callout>
           </MapView.Marker>
