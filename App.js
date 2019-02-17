@@ -3,7 +3,7 @@ import { Platform, Text, View, StyleSheet, Button, Alert, TouchableOpacity } fro
 import { Constants, Location, Permissions, MapView } from 'expo';
 import * as firebase from 'firebase';
 
-// Initialize Firebase
+/// Initialize Firebase
 firebase.initializeApp({
   apiKey: 'AIzaSyBNZLLpKxvf0Rb0aWcyvibRM54WMRF9deQ',
   authDomain: 'treehax-2019.firebaseapp.com',
@@ -14,10 +14,13 @@ var db = firebase.firestore();
 
 // db write sample; should be reusable function call or something
 // This adds a new document (record) in collection "cities"
-db.collection("cities").doc("LA").set({
-    name: "Los Angeles",
-    state: "CA",
-    country: "USA"
+// "time" below should be unix formatted
+db.collection("active").doc("time").set({ 
+    user: "someuid",
+    latitude: "0",
+    longitude: "0",
+    latitudeDelta: "0.0922",
+    longitudeDelta: "0.0421"
 })
 .then(function() {
     console.log("Document successfully written!");
@@ -25,6 +28,7 @@ db.collection("cities").doc("LA").set({
 .catch(function(error) {
     console.error("Error writing document: ", error);
 });
+
 
 
 export default class App extends React.Component {
