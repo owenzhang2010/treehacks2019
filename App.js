@@ -3,19 +3,11 @@ import Main from './components/Main';
 import Chat from './components/Chat';
 // Import React Navigation
 import { createStackNavigator } from 'react-navigation'
-import firebase from 'firebase';
+import firebase from './my-firebase.js';
 require ("firebase/firestore");
 
 /// Initialize Firebase
-firebase.initializeApp({
-  projectId: 'treehax-2019',
-  apiKey: 'AIzaSyBNZLLpKxvf0Rb0aWcyvibRM54WMRF9deQ',
-  authDomain: 'treehax-2019.firebaseapp.com',
-  databaseURL: 'https://treehax-2019.firebaseio.com',
-  storageBucket: 'treehax-2019.appspot.com'
-});
 var db = firebase.firestore();
-
 
 // db write sample; should be reusable function call or something
 // This adds a new document (record) in collection "cities"
