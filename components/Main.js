@@ -1,7 +1,18 @@
 import React, { Component } from 'react';
 import { Platform, Text, View, StyleSheet, Button, Alert, TouchableOpacity } from 'react-native';
 import { Constants, Location, Permissions, MapView } from 'expo';
+import firebase from 'firebase';
+require("firebase/firestore")
 
+/// Initialize Firebase
+firebase.initializeApp({
+  projectId: 'treehax-2019',
+  apiKey: 'AIzaSyBNZLLpKxvf0Rb0aWcyvibRM54WMRF9deQ',
+  authDomain: 'treehax-2019.firebaseapp.com',
+  databaseURL: 'https://treehax-2019.firebaseio.com',
+  storageBucket: 'treehax-2019.appspot.com'
+});
+var db = firebase.firestore();
 
 class Main extends React.Component {
   static navigationOptions = {
@@ -91,13 +102,12 @@ class Main extends React.Component {
       };
     }
 
-    let props = {
-      coordinate: coord2,
-      pinColor: "#000000",
-      name: "Stanford Ghost",
-      gender: "Ghost",
-      age: "195"
-    }
+    db.collection("cities").get().then(function(querySnapshot) {
+      querySnapshot.forEach(function(doc) {
+        // doc.data() is never undefined for query doc snapshots
+        console.log(doc.id, " => ", doc.data());
+      });
+    });
 
     return (
       <View style={styles.container}>

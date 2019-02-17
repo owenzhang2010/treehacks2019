@@ -2,6 +2,7 @@
 
 exports[`SectionList rendering empty section headers is fine 1`] = `
 <RCTScrollView
+  ItemSeparatorComponent={undefined}
   data={
     Array [
       Object {
@@ -22,6 +23,7 @@ exports[`SectionList rendering empty section headers is fine 1`] = `
   getItemCount={[Function]}
   horizontal={false}
   initialNumToRender={10}
+  invertStickyHeaders={undefined}
   keyExtractor={[Function]}
   maxToRenderPerBatch={10}
   onContentSizeChange={[Function]}
@@ -31,6 +33,7 @@ exports[`SectionList rendering empty section headers is fine 1`] = `
   onScroll={[Function]}
   onScrollBeginDrag={[Function]}
   onScrollEndDrag={[Function]}
+  onViewableItemsChanged={undefined}
   renderItem={[Function]}
   renderSectionHeader={[Function]}
   scrollEventThrottle={50}
@@ -89,6 +92,7 @@ exports[`SectionList rendering empty section headers is fine 1`] = `
 
 exports[`SectionList renders a footer when there is no data 1`] = `
 <RCTScrollView
+  ItemSeparatorComponent={undefined}
   data={
     Array [
       Object {
@@ -102,6 +106,7 @@ exports[`SectionList renders a footer when there is no data 1`] = `
   getItemCount={[Function]}
   horizontal={false}
   initialNumToRender={10}
+  invertStickyHeaders={undefined}
   keyExtractor={[Function]}
   maxToRenderPerBatch={10}
   onContentSizeChange={[Function]}
@@ -111,6 +116,7 @@ exports[`SectionList renders a footer when there is no data 1`] = `
   onScroll={[Function]}
   onScrollBeginDrag={[Function]}
   onScrollEndDrag={[Function]}
+  onViewableItemsChanged={undefined}
   renderItem={[Function]}
   renderSectionFooter={[Function]}
   renderSectionHeader={[Function]}
@@ -155,6 +161,7 @@ exports[`SectionList renders a footer when there is no data 1`] = `
 
 exports[`SectionList renders a footer when there is no data and no header 1`] = `
 <RCTScrollView
+  ItemSeparatorComponent={undefined}
   data={
     Array [
       Object {
@@ -168,6 +175,7 @@ exports[`SectionList renders a footer when there is no data and no header 1`] = 
   getItemCount={[Function]}
   horizontal={false}
   initialNumToRender={10}
+  invertStickyHeaders={undefined}
   keyExtractor={[Function]}
   maxToRenderPerBatch={10}
   onContentSizeChange={[Function]}
@@ -177,6 +185,7 @@ exports[`SectionList renders a footer when there is no data and no header 1`] = 
   onScroll={[Function]}
   onScrollBeginDrag={[Function]}
   onScrollEndDrag={[Function]}
+  onViewableItemsChanged={undefined}
   renderItem={[Function]}
   renderSectionFooter={[Function]}
   scrollEventThrottle={50}
@@ -216,6 +225,7 @@ exports[`SectionList renders a footer when there is no data and no header 1`] = 
 
 exports[`SectionList renders all the bells and whistles 1`] = `
 <RCTScrollView
+  ItemSeparatorComponent={undefined}
   ListEmptyComponent={[Function]}
   ListFooterComponent={[Function]}
   ListHeaderComponent={[Function]}
@@ -265,6 +275,7 @@ exports[`SectionList renders all the bells and whistles 1`] = `
   getItemCount={[Function]}
   horizontal={false}
   initialNumToRender={Infinity}
+  invertStickyHeaders={undefined}
   keyExtractor={[Function]}
   maxToRenderPerBatch={10}
   onContentSizeChange={[Function]}
@@ -275,9 +286,11 @@ exports[`SectionList renders all the bells and whistles 1`] = `
   onScroll={[Function]}
   onScrollBeginDrag={[Function]}
   onScrollEndDrag={[Function]}
+  onViewableItemsChanged={undefined}
   refreshControl={
     <RefreshControlMock
       onRefresh={[MockFunction]}
+      progressViewOffset={undefined}
       refreshing={false}
     />
   }
@@ -341,6 +354,7 @@ exports[`SectionList renders all the bells and whistles 1`] = `
   <View>
     <View
       onLayout={[Function]}
+      style={null}
     >
       <header
         v=""
@@ -483,6 +497,7 @@ exports[`SectionList renders all the bells and whistles 1`] = `
     </View>
     <View
       onLayout={[Function]}
+      style={null}
     >
       <footer
         v=""
@@ -494,12 +509,14 @@ exports[`SectionList renders all the bells and whistles 1`] = `
 
 exports[`SectionList renders empty list 1`] = `
 <RCTScrollView
+  ItemSeparatorComponent={undefined}
   data={Array []}
   disableVirtualization={false}
   getItem={[Function]}
   getItemCount={[Function]}
   horizontal={false}
   initialNumToRender={10}
+  invertStickyHeaders={undefined}
   keyExtractor={[Function]}
   maxToRenderPerBatch={10}
   onContentSizeChange={[Function]}
@@ -509,6 +526,7 @@ exports[`SectionList renders empty list 1`] = `
   onScroll={[Function]}
   onScrollBeginDrag={[Function]}
   onScrollEndDrag={[Function]}
+  onViewableItemsChanged={undefined}
   renderItem={[Function]}
   scrollEventThrottle={50}
   sections={Array []}
