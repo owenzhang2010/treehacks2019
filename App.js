@@ -77,6 +77,14 @@ export default class App extends React.Component {
       };
     }
 
+    let props = {
+      coordinate: coord2,
+      pinColor: "#000000",
+      name: "Stanford Ghost",
+      gender: "Ghost",
+      age: "195"
+    }
+
     return (
       <View style={styles.container}>
         <Text style={styles.paragraph}>
@@ -86,6 +94,9 @@ export default class App extends React.Component {
         <MapView style={{ flex: 1 }} region={region}>
           <MapView.Marker coordinate={user_coord} />
           <MapView.Marker
+            ref={ref => {
+              this.marker = ref;
+            }}
             coordinate={coord2}
             pinColor="#000000"
             onPress={() => this.marker.showCallout()}
