@@ -136,7 +136,7 @@ class Main extends React.Component {
         <TouchableOpacity
             style={styles.button}
             onPress={this._showAlert}>
-            <Text style={{fontSize: 32, color: 'blue', textAlign: 'center'}}>I have arrived at my destination safely!</Text>
+            <Text style={{fontSize: 32, color: 'blue', textAlign: 'center'}}>Click when you have arrived to your destination safely.</Text>
           </TouchableOpacity>
 
       </View>
