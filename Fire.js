@@ -1,21 +1,12 @@
-import firebase from 'firebase';
+import firebase from './my-firebase.js';
 require("firebase/firestore")
+
+var db = firebase.firestore();
 
 class Fire {
   constructor() {
-    this.init();
     this.observeAuth();
   }
-
-  init = () =>
-    firebase.initializeApp({
-      apiKey: "AIzaSyB6dpFrUsLcZ8nDRvZo2Do8sII7zi-PWwY",
-      authDomain: "lanternchat.firebaseapp.com",
-      databaseURL: "https://lanternchat.firebaseio.com",
-      projectId: "lanternchat",
-      storageBucket: "lanternchat.appspot.com",
-      messagingSenderId: "972076900193"
-    });
 
   observeAuth = () =>
     firebase.auth().onAuthStateChanged(this.onAuthStateChanged);

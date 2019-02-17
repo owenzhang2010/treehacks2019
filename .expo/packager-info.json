@@ -1,9 +1,9 @@
 {
   "devToolsPort": 19002,
-  "expoServerPort": null,
-  "packagerPort": null,
-  "packagerPid": null,
+  "expoServerPort": 19000,
+  "packagerPort": 19001,
+  "packagerPid": 7721,
   "expoServerNgrokUrl": "https://mc-du9.anonymous.treehacks2019.exp.direct",
   "packagerNgrokUrl": "https://packager.mc-du9.anonymous.treehacks2019.exp.direct",
-  "ngrokPid": 2943
+  "ngrokPid": 7752
 }
