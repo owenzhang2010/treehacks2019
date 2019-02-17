@@ -31,9 +31,10 @@ db.collection("users").doc("ghost").set({
   gender: "Ghost",
   age: "195",
   phone: "666-666-6666",
-  email: "leland_lel@stanford.edu",
+  email: "furd_ghost@stanford.edu",
   lat: 37.427828 + 0.01,
-  lon: -122.174162 + 0.005
+  lon: -122.174162 + 0.005,
+  sinceLastLogin: 5
 });
 
 db.collection("users").doc("tree").set({
@@ -43,7 +44,8 @@ db.collection("users").doc("tree").set({
   phone: "800-THE-TREE",
   email: "leafy_boi@stanford.edu",
   lat: 37.427828 - 0.003,
-  lon: -122.174162 + 0.011
+  lon: -122.174162 + 0.011,
+  sinceLastLogin: 2
 });
 
 db.collection("users").doc("owen").set({
@@ -53,7 +55,8 @@ db.collection("users").doc("owen").set({
   phone: "848-459-0929",
   email: "owenzhang2010@berkeley.edu",
   lat: 37.8723,
-  lon: -122.2736
+  lon: -122.2736,
+  sinceLastLogin: 14
 });
 
 // Create the navigator

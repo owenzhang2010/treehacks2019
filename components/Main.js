@@ -95,12 +95,24 @@ class Main extends React.Component {
       };
     }
 
-    db.collection("cities").get().then(function(querySnapshot) {
-      querySnapshot.forEach(function(doc) {
-        // doc.data() is never undefined for query doc snapshots
-        console.log(doc.id, " => ", doc.data());
-      });
+    /*var promise = new Promise((resolve, reject) => {
+      var points = getPins();
+
+      if (points[0]) {
+        resolve("yea");
+        return points;
+      } else {
+        reject(Error("fuuuuuuuuu"));
+      }
     });
+
+    promise.then(result => {
+      console.log(result[0]);
+    }, error => {
+      console.log(error);
+    })*/
+    var points = getPins();
+    console.log(points[0]);
 
     return (
       <View style={styles.container}>
@@ -142,6 +154,19 @@ class Main extends React.Component {
       </View>
     );
   }
+}
+
+async function getPins() {
+  var points = [];
+  await db.collection("users").get().then(querySnapshot => {
+    querySnapshot.forEach(doc => {
+      points.push(doc.data());
+      console.log("push");
+    });
+  }).then(() => {
+    console.log("second callback or some shit");
+    return points;
+  });
 }
 
 const styles = StyleSheet.create({
