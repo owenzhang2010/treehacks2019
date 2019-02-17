@@ -1,16 +1,19 @@
 import React, { Component } from 'react';
 import { Platform, Text, View, StyleSheet, Button, Alert, TouchableOpacity } from 'react-native';
 import { Constants, Location, Permissions, MapView } from 'expo';
-import * as firebase from 'firebase';
+import firebase from 'firebase';
+require ("firebase/firestore");
 
 /// Initialize Firebase
 firebase.initializeApp({
+  projectId: 'treehax-2019',
   apiKey: 'AIzaSyBNZLLpKxvf0Rb0aWcyvibRM54WMRF9deQ',
   authDomain: 'treehax-2019.firebaseapp.com',
   databaseURL: 'https://treehax-2019.firebaseio.com',
   storageBucket: 'treehax-2019.appspot.com'
 });
 var db = firebase.firestore();
+
 
 // db write sample; should be reusable function call or something
 // This adds a new document (record) in collection "cities"
