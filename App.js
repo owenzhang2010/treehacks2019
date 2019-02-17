@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Platform, Text, View, StyleSheet } from 'react-native';
+import { Platform, Text, View, StyleSheet, Button, Alert, TouchableOpacity } from 'react-native';
 import { Constants, Location, Permissions, MapView } from 'expo';
 
 export default class App extends React.Component {
@@ -29,6 +29,18 @@ export default class App extends React.Component {
     let location = await Location.getCurrentPositionAsync({});
     this.setState({ location });
   };
+
+    _showAlert = () => {
+    Alert.alert(
+      'Arrived safely.',
+      'Please confirm that you do not want to alert your emergency contacts.',
+      [
+        {text: 'Do not alert emergency contacts', onPress: () => console.log             ('Confirmed'), style: 'OK Pressed'},
+        {text: 'Cancel', onPress: () => console.log('cancel')},
+      ],
+      { cancelable: false }
+    )
+  }
 
   render() {
     let text = 'Waiting...';
@@ -74,9 +86,6 @@ export default class App extends React.Component {
         <MapView style={{ flex: 1 }} region={region}>
           <MapView.Marker coordinate={user_coord} />
           <MapView.Marker
-            ref={ref => {
-              this.marker = ref;
-            }}
             coordinate={coord2}
             pinColor="#000000"
             onPress={() => this.marker.showCallout()}
@@ -90,6 +99,13 @@ export default class App extends React.Component {
             </MapView.Callout>
           </MapView.Marker>
         </MapView>
+
+        <TouchableOpacity
+            style={styles.button}
+            onPress={this._showAlert}>
+            <Text style={{fontSize: 32, color: 'blue', textAlign: 'center'}}>I have arrived at my destination safely!</Text>
+          </TouchableOpacity>
+
       </View>
     );
   }
