@@ -40,16 +40,6 @@ export default class App extends React.Component {
     errorMessage: null,
   };
 
-  componentWillMount() {
-    if (Platform.OS === 'android' && !Constants.isDevice) {
-      this.setState({
-        errorMessage: 'Oops',
-      });
-    } else {
-      this._getLocationAsync();
-    }
-  }
-
   _getLocationAsync = async () => {
     let { status } = await Permissions.askAsync(Permissions.LOCATION);
     if (status !== 'granted') {
@@ -61,6 +51,45 @@ export default class App extends React.Component {
     let location = await Location.getCurrentPositionAsync({});
     this.setState({ location });
   };
+
+  componentWillMount() {
+    if (Platform.OS === 'android' && !Constants.isDevice) {
+      this.setState({
+        errorMessage: 'Oops',
+      });
+    } else {
+      this._getLocationAsync();
+    }
+    db.collection("users").doc("ghost").set({
+      name: "Stanford Ghost",
+      gender: "Ghost",
+      age: "195",
+      phone: "666-666-6666",
+      email: "leland_lel@stanford.edu",
+      lat: 37.427828 + 0.01,
+      lon: -122.174162 + 0.005
+    });
+
+    db.collection("users").doc("tree").set({
+      name: "Stanford Tree",
+      gender: "Tree",
+      age: "1000",
+      phone: "800-THE-TREE",
+      email: "leafy_boi@stanford.edu",
+      lat: 37.427828 - 0.003,
+      lon: -122.174162 + 0.011
+    });
+
+    db.collection("users").doc("owen").set({
+      name: "Owen Zhang",
+      gender: "Male",
+      age: "19",
+      phone: "848-459-0929",
+      email: "owenzhang2010@berkeley.edu",
+      lat: 37.8723,
+      lon: -122.2736
+    });
+  }
 
     _showAlert = () => {
     Alert.alert(
